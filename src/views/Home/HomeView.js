@@ -31,13 +31,11 @@ export default {
         async getCurrentUser() {
             const result = await axios.get(API_URL + 'user', { headers: authHeader() });
             this.currentUser = result.data;
-            console.log(this.currentUser);
         },
 
         async getAccountByCurrentUser() {
             const result = await axios.get(API_URL + 'account', { headers: authHeader() });
             this.currentAccount = result.data;
-            console.log(this.currentAccount);
         },
 
         async transfer(data) {
@@ -46,7 +44,16 @@ export default {
                 value: parseInt(data.value)
             }, { headers: authHeader() });
 
-            console.log(result);
+            document.querySelector('Form').reset();
+            this.getAccountByCurrentUser();
+
+            if (result.status === 200) {
+                this.message = "successful transaction"
+            }
+
+            setTimeout(() => {
+                this.message = ""
+            }, "5000")
 
         }
     }

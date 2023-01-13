@@ -28,8 +28,8 @@
               <span>submit</span>
             </button>
           </div>
-          <div class="form-group mt-2">
-            <div v-if="message" class="alert alert-danger" role="alert">
+          <div class="form-group mt-2 msg">
+            <div v-if="message" class="alert alert-success" role="alert">
               {{ message }}
             </div>
           </div>
@@ -120,6 +120,13 @@
     .error-feedback {
       color: rgb(7, 83, 83);
     }
+
+    .alert-success {
+      color: rgb(21, 112, 112);
+      text-align: center;
+    }
+
+
   }
 }
 </style>
