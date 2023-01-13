@@ -1,13 +1,13 @@
 <template>
     <nav class="navbar navbar-expand">
-        <a href="/" class="navbar-brand">finTech</a>
+        <div class="navbar-brand"><img src="@/assets/wallet.png">finTech</div>
         <div class="navbar-nav mr-auto">
         </div>
 
         <div v-if="!currentUser" class="navbar-nav ml-auto">
             <li class="nav-item">
                 <router-link to="/register" class="nav-link">
-                    <font-awesome-icon icon="user-plus" /> Sign Up
+                    <font-awesome-icon icon="user-plus" /> Register
                 </router-link>
             </li>
             <li class="nav-item">
@@ -27,3 +27,36 @@
     </nav>
 </template>
 <script src="./NavBar.js"></script>
+<style lang="scss" scoped>
+nav {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+
+    .navbar-brand {
+        color: #fff;
+        text-align: center;
+
+        img {
+            width: 25px;
+            height: 25px;
+            margin-right: 0.5rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+            color: aqua;
+        }
+
+        &:focus {
+            color: #fff;
+        }
+    }
+
+}
+</style>

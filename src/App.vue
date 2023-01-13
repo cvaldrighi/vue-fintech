@@ -1,6 +1,8 @@
 <template>
   <NavBar />
-  <router-view />
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -17,34 +19,11 @@ export default {
 * {
   padding: 0;
   margin: 0;
-  background-color: rgb(12, 68, 78);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
-nav {
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .right {
-    a {
-      margin-left: 30px;
-      margin-top: 15px;
-    }
-  }
-
+  background-image: linear-gradient(to bottom right, rgb(12, 12, 12), rgb(56, 55, 55));
+  height: 100vh;
 }
 </style>
