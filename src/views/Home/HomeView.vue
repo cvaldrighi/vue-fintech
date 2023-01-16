@@ -10,8 +10,8 @@
         <h4 v-if="eyeActive" class="value">
           ${{ currentAccount.balance }}
         </h4>
-        <font-awesome-icon @click="TOGGLE_EYE" icon="eye" v-if="eyeActive" />
-        <font-awesome-icon @click="TOGGLE_EYE" icon="eye-slash" v-if="!eyeActive" />
+        <font-awesome-icon @click.prevent="TOGGLE_EYE" icon="eye" v-if="eyeActive" />
+        <font-awesome-icon @click.prevent="TOGGLE_EYE" icon="eye-slash" v-if="!eyeActive" />
 
       </div>
     </div>

@@ -1,6 +1,11 @@
 <template>
     <nav class="navbar navbar-expand">
-        <div class="navbar-brand"><img src="@/assets/wallet.png">finTech</div>
+        <div class="navbar-brand">
+            <router-link to="/">
+                <img src="@/assets/wallet.png">finTech
+            </router-link>
+        </div>
+
         <div class="navbar-nav mr-auto">
         </div>
 
@@ -18,6 +23,11 @@
         </div>
 
         <div v-if="currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <router-link to="/transactions" class="nav-link">
+                    <font-awesome-icon icon="exchange" /> Transactions
+                </router-link>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" @click.prevent="logOut">
                     <font-awesome-icon icon="sign-out-alt" /> LogOut

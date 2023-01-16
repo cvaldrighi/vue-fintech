@@ -8,8 +8,10 @@ import {
     faSignOutAlt,
     faEyeSlash,
     faEye,
+    faExchange,
+    faSearch
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faEyeSlash, faEye);
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faEyeSlash, faEye, faExchange, faSearch);
 
 export { FontAwesomeIcon }
