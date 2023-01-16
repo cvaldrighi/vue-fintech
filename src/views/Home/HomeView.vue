@@ -5,7 +5,14 @@
         <h1>Hello, {{ currentUser.username }}</h1>
       </div>
       <div class="balance">
-        <h4>balance: ${{ currentAccount.balance }}</h4>
+
+        <h4>balance: </h4>
+        <h4 v-if="eyeActive" class="value">
+          ${{ currentAccount.balance }}
+        </h4>
+        <font-awesome-icon @click="TOGGLE_EYE" icon="eye" v-if="eyeActive" />
+        <font-awesome-icon @click="TOGGLE_EYE" icon="eye-slash" v-if="!eyeActive" />
+
       </div>
     </div>
     <div class="right col-6">
@@ -59,10 +66,19 @@
 
   .balance {
     margin-top: 1rem;
+    display: flex;
 
     h4 {
       font-weight: 200;
       color: #fff;
+      margin-right: 0.5rem;
+    }
+
+    svg {
+      cursor: pointer;
+      height: 1.5rem;
+      color: aqua;
+      margin-left: 0.5em;
     }
   }
 }

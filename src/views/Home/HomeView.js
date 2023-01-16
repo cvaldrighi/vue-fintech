@@ -2,6 +2,7 @@ import axios from "axios"
 import authHeader from "@/services/auth.header";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
+import { mapState, mapMutations } from "vuex";
 
 const API_URL = 'http://localhost:3333/';
 
@@ -27,7 +28,11 @@ export default {
         this.getCurrentUser();
         this.getAccountByCurrentUser();
     },
+    computed: {
+        ...mapState(["eyeActive"]),
+    },
     methods: {
+        ...mapMutations(["TOGGLE_EYE"]),
         async getCurrentUser() {
             const result = await axios.get(API_URL + 'user', { headers: authHeader() });
             this.currentUser = result.data;
